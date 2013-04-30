@@ -82,7 +82,7 @@ def getPortalLogoId(portal):
 def rejectAnonymous(portal, request):
 
     # Bypass privacy check for non-admin urls
-    if 'admin' not in request['URL']:
+    if 'admin' not in request['URL'][:15]:
         return
 
     if isAnonymousUser():
